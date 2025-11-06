@@ -1,16 +1,16 @@
 <?php
-require_once '../../middleware/auth.php';
+require_once '../../../middleware/auth.php';
 requireRole('bidan');
-require_once '../../config/db.php';
-require_once '../../models/Visit.php';
-require_once '../../models/Patient.php';
+require_once '../../../config/db.php';
+require_once '../../../models/Visit.php';
+require_once '../../../models/Patient.php';
 
 $visitModel = new Visit($pdo);
 $patientModel = new Patient($pdo);
 $visit = $visitModel->getById($_GET['id']);
 $patients = $patientModel->getAll();
 ?>
-<form method="POST" action="../../controllers/VisitController.php">
+<form method="POST" action="../../../controllers/VisitController.php">
     <h2>Edit Kunjungan</h2>
     <input type="hidden" name="id" value="<?= $visit['id'] ?>">
 

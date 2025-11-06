@@ -1,9 +1,9 @@
 <?php
-require_once '../../middleware/auth.php';
+require_once '../../../middleware/auth.php';
 requireRole('bidan');
-require_once '../../config/db.php';
-require_once '../../models/Patient.php';
-require_once '../../middleware/flash.php';
+require_once '../../../config/db.php';
+require_once '../../../models/Patient.php';
+require_once '../../../middleware/flash.php';
 $patientModel = new Patient($pdo);
 $patients = $patientModel->getAll();
 showFlash();
@@ -16,7 +16,7 @@ showFlash();
 </head>
 <body>
 <h2>Data Pasien</h2>
-<a href="create.php">+ Tambah Pasien</a>
+<a href="create.php">+ Tambah Pasien</a> | <a href="../dashboard/admin/index.php">Kembali ke Dashboard</a>
 <table border="1" cellpadding="6" cellspacing="0">
     <tr>
         <th>ID</th><th>Nama</th><th>NIK</th><th>Umur</th><th>Alamat</th><th>Telepon</th><th>Aksi</th>

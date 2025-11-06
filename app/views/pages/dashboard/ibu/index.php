@@ -1,5 +1,5 @@
 <?php
-require_once '../../../middleware/auth.php';
+require_once '../../../../middleware/auth.php';
 requireRole('ibu');
 ?>
 <!DOCTYPE html>
@@ -7,6 +7,8 @@ requireRole('ibu');
 <head>
     <meta charset="UTF-8">
     <title>Dashboard Ibu</title>
+    <link rel="stylesheet" href="../../../../../public/assets/css/ibu.css">
+    
 </head>
 <body>
     <h1>Halo, <?= htmlspecialchars($_SESSION['user']['name']); ?> 👩‍🍼</h1>
@@ -15,7 +17,7 @@ requireRole('ibu');
     <nav>
         <ul>
             <li><a href="articles.php">📰 Baca Artikel Edukasi</a></li>
-            <li><a href="../../../controllers/AuthController.php?logout=true">Logout</a></li>
+            <li><a href="/projectKampus/e-kesehatan/app/controllers/AuthController.php?logout=true">Logout</a></li>
         </ul>
     </nav>
 </body>

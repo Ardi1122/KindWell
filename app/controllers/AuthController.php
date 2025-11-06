@@ -31,9 +31,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     if ($userModel->login($email, $password, $remember)) {
         $role = $_SESSION['user']['role'];
         if ($role === 'bidan') {
-            header('Location: ../views/dashboard/admin/index.php');
+            header('Location: ../views/pages/dashboard/admin/index.php');
         } else {
-            header('Location: ../views/dashboard/ibu/index.php');
+            header('Location: ../views/pages/dashboard/ibu/index.php');
         }
         exit;
     } else {
@@ -46,7 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
 // === LOGOUT ===
 if (isset($_GET['logout'])) {
     $userModel->logout();
-    header('Location: ../views/auth/login.php');
+    // header('Location: ../views/auth/login.php');
+    header('Location: ../../public/index.php');
     exit;
 }
 ?>

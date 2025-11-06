@@ -1,13 +1,13 @@
 <?php
-require_once '../../middleware/auth.php';
+require_once '../../../middleware/auth.php';
 requireRole('bidan');
-require_once '../../config/db.php';
-require_once '../../models/Article.php';
+require_once '../../../config/db.php';
+require_once '../../../models/Article.php';
 
 $articleModel = new Article($pdo);
 $article = $articleModel->getById($_GET['id']);
 ?>
-<form method="POST" action="../../controllers/ArticleController.php" enctype="multipart/form-data">
+<form method="POST" action="../../../controllers/ArticleController.php" enctype="multipart/form-data">
     <h2>Edit Artikel</h2>
     <input type="hidden" name="id" value="<?= $article['id'] ?>">
     <input type="text" name="title" value="<?= htmlspecialchars($article['title']) ?>" required><br>

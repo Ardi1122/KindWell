@@ -1,10 +1,10 @@
 <?php
-require_once '../../config/db.php';
-require_once '../../models/Patient.php';
+require_once '../../../config/db.php';
+require_once '../../../models/Patient.php';
 $patientModel = new Patient($pdo);
 $patient = $patientModel->getById($_GET['id']);
 ?>
-<form method="POST" action="../../controllers/PatientController.php">
+<form method="POST" action="../../../controllers/PatientController.php">
     <h2>Edit Pasien</h2>
     <input type="hidden" name="id" value="<?= $patient['id'] ?>">
     <input type="text" name="name" value="<?= htmlspecialchars($patient['name']) ?>" required><br>

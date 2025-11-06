@@ -15,7 +15,7 @@ if (isset($_POST['create'])) {
     } else {
         setFlash('error', '❌ Gagal menambahkan data pasien.');
     }
-    header('Location: ../views/patients/index.php');
+    header('Location: ../views/pages/patients/index.php');
     exit;
 }
 
@@ -26,7 +26,7 @@ if (isset($_POST['update'])) {
     } else {
         setFlash('error', '❌ Gagal memperbarui data pasien.');
     }
-    header('Location: ../views/patients/index.php');
+    header('Location: ../views/pages/patients/index.php');
     exit;
 }
 
@@ -37,7 +37,7 @@ if (isset($_GET['delete'])) {
     } else {
         setFlash('error', '❌ Gagal menghapus data pasien.');
     }
-    header('Location: ../views/patients/index.php');
+    header('Location: ../views/pages/patients/index.php');
     exit;
 }
 ?>

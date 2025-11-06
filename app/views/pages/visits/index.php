@@ -1,10 +1,11 @@
 <?php
-require_once '../../middleware/auth.php';
+require_once '../../../middleware/auth.php';
 requireRole('bidan');
-require_once '../../config/db.php';
-require_once '../../models/Visit.php';
+require_once '../../../config/db.php';
+require_once '../../../models/Visit.php';
 $visitModel = new Visit($pdo);
 $visits = $visitModel->getAll();
+
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -36,7 +37,7 @@ $visits = $visitModel->getAll();
         <td><?= htmlspecialchars($v['notes']) ?></td>
         <td>
             <a href="edit.php?id=<?= $v['id'] ?>">Edit</a> |
-            <a href="../../controllers/VisitController.php?delete=<?= $v['id'] ?>" onclick="return confirm('Yakin hapus?')">Hapus</a>
+            <a href="../../../controllers/VisitController.php?delete=<?= $v['id'] ?>" onclick="return confirm('Yakin hapus?')">Hapus</a>
         </td>
     </tr>
     <?php endforeach; ?>

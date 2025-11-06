@@ -1,12 +1,13 @@
 <?php
-require_once '../../middleware/auth.php';
+require_once '../../../middleware/auth.php';
 requireRole('bidan');
-require_once '../../config/db.php';
-require_once '../../models/Article.php';
-require_once '../../middleware/flash.php';
+require_once '../../../config/db.php';
+require_once '../../../models/Article.php';
+require_once '../../../middleware/flash.php';
 
 $articleModel = new Article($pdo);
 $articles = $articleModel->getAll();
+showFlash();
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -26,8 +27,6 @@ $articles = $articleModel->getAll();
 <body>
 <h2>Daftar Artikel Edukasi</h2>
 
-<?php showFlash(); ?>
-
 <a href="create.php">+ Tambah Artikel</a> | 
 <a href="../dashboard/admin/index.php">Kembali ke Dashboard</a>
 
@@ -46,7 +45,7 @@ $articles = $articleModel->getAll();
         <td><?= htmlspecialchars($a['title']) ?></td>
         <td>
             <?php if (!empty($a['image'])): ?>
-                <img src="../../../public/uploads/articles/<?= htmlspecialchars($a['image']) ?>" class="thumb" alt="gambar">
+                <img src="../../../../public/uploads/articles/<?= htmlspecialchars($a['image']) ?>" class="thumb" alt="gambar">
             <?php else: ?>
                 <em>Tidak ada</em>
             <?php endif; ?>
@@ -55,7 +54,7 @@ $articles = $articleModel->getAll();
         <td><?= date('d M Y', strtotime($a['created_at'])) ?></td>
         <td>
             <a href="edit.php?id=<?= $a['id'] ?>">Edit</a> |
-            <a href="../../controllers/ArticleController.php?delete=<?= $a['id'] ?>" onclick="return confirm('Hapus artikel ini?')">Hapus</a>
+            <a href="../../../controllers/ArticleController.php?delete=<?= $a['id'] ?>" onclick="return confirm('Hapus artikel ini?')">Hapus</a>
         </td>
     </tr>
     <?php endforeach; ?>

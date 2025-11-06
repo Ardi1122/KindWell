@@ -1,7 +1,5 @@
 <?php
-// karena file ini ada di: app/views/dashboard/admin/
-// maka naik ke folder middleware di: app/middleware/auth.php
-require_once '../../../middleware/auth.php';
+require_once '../../../../middleware/auth.php';
 requireRole('bidan');
 ?>
 <!DOCTYPE html>
@@ -21,6 +19,6 @@ requireRole('bidan');
         </ul>
     </nav>
 
-    <a href="../../../controllers/AuthController.php?logout=true">Logout</a>
+    <a href="/projectKampus/e-kesehatan/app/controllers/AuthController.php?logout=true">Logout</a>
 </body>
 </html>

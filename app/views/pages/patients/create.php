@@ -1,4 +1,4 @@
-<form method="POST" action="../../controllers/PatientController.php">
+<form method="POST" action="../../../controllers/PatientController.php">
     <h2>Tambah Pasien</h2>
     <input type="text" name="name" placeholder="Nama Lengkap" required><br>
     <input type="text" name="nik" placeholder="NIK" required><br>

@@ -25,7 +25,7 @@ if (isset($_POST['create'])) {
     }
 
     $articleModel->create($_POST['title'], $_POST['content'], $_SESSION['user']['id'], $imageName);
-    header('Location: ../views/articles/index.php?success=1');
+    header('Location: ../views/pages/articles/index.php?success=1');
     exit;
 }
 
@@ -38,14 +38,14 @@ if (isset($_POST['update'])) {
     }
 
     $articleModel->update($_POST['id'], $_POST['title'], $_POST['content'], $imageName);
-    header('Location: ../views/articles/index.php?updated=1');
+    header('Location: ../views/pages/articles/index.php?updated=1');
     exit;
 }
 
 // DELETE
 if (isset($_GET['delete'])) {
     $articleModel->delete($_GET['delete']);
-    header('Location: ../views/articles/index.php?deleted=1');
+    header('Location: ../views/pages/articles/index.php?deleted=1');
     exit;
 }
 ?>
